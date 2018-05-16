@@ -50,7 +50,7 @@ def self.alphabetical
 end
 
 def self.new_from_filename(filename)
-
+  binding.pry
   split_filename = filename.chop.chop.chop.chop.split(" - ")
 
 end
