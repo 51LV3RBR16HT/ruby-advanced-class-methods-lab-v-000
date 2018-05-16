@@ -41,7 +41,7 @@ def self.find_or_create_by_name(name)
 end
 
 def self.alphabetical(name)
-  @ll.sort{ |sort| sort.name == name}
+  @all.sort{ |sort| sort.name == name}
 end
 
 
