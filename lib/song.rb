@@ -43,8 +43,8 @@ end
 
 def self.alphabetical
   @@all.sort_by{ |song| song.name }
-  # @@all.each.name.sort{ |a,b| a.name <=> b.name }
   # @@all.sort{ |a,b| a.name <=> b.name}
+  # @@all.each.name.sort{ |a,b| a.name <=> b.name }
 end
 
 def self.new_from_filename(name)
