@@ -63,7 +63,11 @@ def self.create_from_filename(filename)
   song.artist_name = split_filename[0]
   song.name = split_filename[1]
   song.save
-  song 
+  song
+end
+
+def self.destroy_all
+  self.all.clear 
 end
 
 
