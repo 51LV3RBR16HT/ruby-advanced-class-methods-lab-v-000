@@ -41,7 +41,7 @@ def self.find_or_create_by_name(name)
 end
 
 def self.alphabetical(name)
-  @all.sort{ |song| song.name ==  name}
+  @all.sort!{ |song| song.name ==  name}
 end
 
 
