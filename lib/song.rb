@@ -35,41 +35,41 @@ class Song
     @@all.find{ |song| song.name == name }
   end
 
-def self.find_or_create_by_name(name)
-  self.find_by_name(name) || self.create_by_name(name)
-# if self.find_by_name(name)
-#   self.find_by_name(name)
-# else self.create_by_name(name)
-# end
+  def self.find_or_create_by_name(name)
+    self.find_by_name(name) || self.create_by_name(name)
+    # if self.find_by_name(name)
+    #   self.find_by_name(name)
+    # else self.create_by_name(name)
+    # end
 end
 
 def self.alphabetical
   # @@all.each.name.sort{ |a,b| a.name <=> b.name }
   # @@all.sort{ |a,b| a.name <=> b.name}
     @@all.sort_by{ |song| song.name }
-end
+  end
 
-def self.new_from_filename(filename)
-  split_filename = filename.chop.chop.chop.chop.split(" - ")
-  song = self.new
-  song.artist_name = split_filename[0]
-  song.name = split_filename[1]
-  song
-end
+  def self.new_from_filename(filename)
+    split_filename = filename.chop.chop.chop.chop.split(" - ")
+    song = self.new
+    song.artist_name = split_filename[0]
+    song.name = split_filename[1]
+    song
+  end
 
-def self.create_from_filename(filename)
-  split_filename = filename.chop.chop.chop.chop.split(" - ")
-  song = self.new
-  song.artist_name = split_filename[0]
-  song.name = split_filename[1]
-  song.save
-  song
-end
+  def self.create_from_filename(filename)
+    split_filename = filename.chop.chop.chop.chop.split(" - ")
+    song = self.new
+    song.artist_name = split_filename[0]
+    song.name = split_filename[1]
+    song.save
+    song
+  end
 
-def self.destroy_all
-  self.all.clear
-  # @@all = []
-  # @@all.clear
-end
+  def self.destroy_all
+    self.all.clear
+    # @@all = []
+    # @@all.clear
+  end
 
 end
